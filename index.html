@@ -10,6 +10,8 @@
   <div id="app">
     <h1>{{message}}</h1><br>
     <h2>{{counter}}</h2><br>
+    <h4 v-if="counter % 2 === 0">This is even number</h4>
+    <h4 v-else>This is odd number</h4>
     <div>
       <button v-on:click="changeMessage"> click to change message</button><br>
     </div><br>
@@ -45,7 +47,6 @@
         }
       }
     })
-
     app.mount('#app')
   </script>
 </body>
