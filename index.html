@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h1>{{message}}</h1><br>
+    <h2>{{counter}}</h2><br>
+    <div>
+      <button v-on:click="changeMessage"> click to change message</button><br>
+    </div><br>
+    <div style="display: flex; gap: 20px;">
+      <button v-on:click="Incremental"> click to increment</button>
+      <button v-on:click="Decremental"> click to decrement</button>
+    </div>
+  </div>
+
+
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          message: 'Hello World',
+          counter: 0
+        }
+      },
+      methods: {
+        // show the message if button clicked
+        changeMessage() {
+          this.message = 'Hello Vue'
+        },
+
+        // increment the value of counter
+        Incremental() {
+          this.counter++
+        },
+
+        Decremental() {
+          this.counter--
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+</html>
